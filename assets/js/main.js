@@ -86,14 +86,9 @@ function seleccionarServicios() {
       return;
     }
 
-    //Chequeamos condición para salir o no del condicional
-    const respuesta = prompt("¿Te gustaría agregar otro servicio? (si/no)");
+    const respuesta = confirm("¿Te gustaría agregar otro servicio?");
 
-    if (respuesta === null) {
-      seguir = false; // Salimos del bucle si el usuario cancela
-    } else {
-      seguir = respuesta.toLowerCase() === "si";
-    }
+    seguir = respuesta;
   }
 }
 
