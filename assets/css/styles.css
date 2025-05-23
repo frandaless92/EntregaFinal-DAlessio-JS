@@ -1,0 +1,90 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Estilos globales */
+body {
+  background-color: #0a0a0a;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  margin-top: 127px !important;
+}
+
+/* ENCABEZADO */
+header {
+  background-color: #f5f3f3;
+  padding: 10px 0px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Logo */
+.logo img {
+  max-width: 100px;
+  display: inline-block;
+}
+
+/* Menú */
+.menu-principal ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0;
+}
+.menu-principal.active {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.menu-principal a {
+  text-decoration: none;
+  color: #9da715;
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 5px;
+}
+.menu-principal a:hover {
+  background: #46400f;
+}
+
+.title-principal {
+  margin: 10px;
+  color: #9da715;
+  font-size: 48px;
+}
+
+.description {
+  margin: 10px;
+}
+/* Versión para escritorio */
+@media (min-width: 768px) {
+  .menu-principal {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  .menu-principal ul {
+    flex-direction: row;
+  }
+  .menu-principal a {
+    font-size: 16px;
+  }
+  .logo img {
+    max-width: 100px;
+  }
+}
