@@ -9,7 +9,7 @@
 
 /* Estilos globales */
 body {
-  background-color: #0a0a0a;
+  background-color: #5c5858;
   color: #ffffff;
   margin: 0;
   padding: 0;
@@ -71,6 +71,64 @@ header {
 .description {
   margin: 10px;
 }
+
+.container h2 {
+  color: #9da715 !important;
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+h2 {
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 600;
+}
+
+.card {
+  transition: transform 0.3s ease;
+  /* Opcional: para que el aumento no desplace el resto del contenido */
+  transform-origin: center center;
+}
+
+.card:hover {
+  transform: scale(1.05); /* Aumenta un 5% */
+  z-index: 10; /* Para que se superponga si hay elementos cercanos */
+}
+
+.card-title {
+  color: #9da715 !important;
+}
+
+.card-text {
+  font-size: 0.95rem;
+}
+
+footer {
+  background-color: #f5f3f3;
+}
+
+footer img {
+  transition: transform 0.2s ease;
+}
+
+footer img:hover {
+  transform: scale(1.1);
+}
+
+#formulario-datos {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#lista-servicios .card {
+  margin: 10px;
+}
+
 /* Versión para escritorio */
 @media (min-width: 768px) {
   .menu-principal {
