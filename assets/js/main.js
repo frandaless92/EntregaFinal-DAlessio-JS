@@ -7,7 +7,7 @@ const servicios = [
   { id: 6, nombre: "Pedicura", precio: 12500 },
 ];
 
-const diasDisponibles = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"];
+let diasDisponibles = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"];
 const horariosDisponibles = [
   "10:00",
   "10:30",
@@ -30,6 +30,11 @@ document.addEventListener("DOMContentLoaded", () => {
     .getElementById("formulario-turno")
     .addEventListener("submit", (e) => {
       e.preventDefault();
+    });
+
+  document
+    .getElementById("btn-agregar-servicio")
+    .addEventListener("click", () => {
       procesarReserva();
     });
 });
@@ -47,7 +52,7 @@ function renderServicios() {
           <h5 class="card-title">${serv.nombre}</h5>
           <p class="card-text">Precio: $${serv.precio}</p>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="${serv.id}" id="serv-${serv.id}">
+            <input class="form-check-input" type="radio" name="servicio" value="${serv.id}" id="serv-${serv.id}">
             <label class="form-check-label" for="serv-${serv.id}">
               Seleccionar
             </label>
@@ -64,6 +69,7 @@ function renderServicios() {
 
 function renderDias() {
   const select = document.getElementById("dia");
+  select.innerHTML = "";
   diasDisponibles.forEach((dia) => {
     const option = document.createElement("option");
     option.value = dia;
@@ -89,6 +95,27 @@ function actualizarHorarios() {
     (hora) =>
       !turnosReservados.find((t) => t.dia === diaElegido && t.hora === hora)
   );
+  if (horariosLibres.length === 0) {
+    const index = diasDisponibles.indexOf(diaElegido);
+    if (index > -1) {
+      diasDisponibles.splice(index, 1);
+    }
+    renderDias();
+
+    const selectDia = document.getElementById("dia");
+
+    if (diasDisponibles.length > 0) {
+      // Seleccionar el primer día disponible
+      selectDia.value = diasDisponibles[0];
+      actualizarHorarios(); // Actualizar horarios para el nuevo día seleccionado
+    } else {
+      // Si no quedan días, deshabilitar el select
+      selectDia.disabled = true;
+      renderHorarios([]); // No hay horarios para mostrar
+    }
+    return;
+  }
+
   renderHorarios(horariosLibres);
 }
 
@@ -97,49 +124,51 @@ function procesarReserva() {
   const apellido = document.getElementById("apellido").value.trim();
   const telefono = document.getElementById("telefono").value.trim();
 
-  const serviciosElegidos = Array.from(
-    document.querySelectorAll("#lista-servicios input:checked")
-  ).map((input) => servicios.find((s) => s.id == input.value));
+  const seleccionado = document.querySelector('input[name="servicio"]:checked');
+  const servicio = seleccionado
+    ? servicios.find((s) => s.id == seleccionado.value)
+    : null;
 
   const dia = document.getElementById("dia").value;
   const hora = document.getElementById("hora").value;
 
-  if (!nombre || !apellido || serviciosElegidos.length === 0) {
-    alert("Por favor completá los datos y elegí al menos un servicio.");
+  if (!nombre || !apellido || !servicio || !dia || !hora) {
+    Swal.fire({
+      icon: "error",
+      title: "Error",
+      text: "Por favor completá todos los campos y seleccioná un servicio.",
+    });
     return;
   }
+
+  const nuevoTurno = {
+    cliente: { nombre, apellido, telefono },
+    servicio: servicio.nombre,
+    precio: servicio.precio,
+    dia,
+    hora,
+  };
+
+  // Obtener los turnos anteriores del localStorage
+  const turnosGuardados = JSON.parse(localStorage.getItem("turnos")) || [];
+
+  // Agregar el nuevo turno
+  turnosGuardados.push(nuevoTurno);
+
+  // Guardar de nuevo en localStorage
+  localStorage.setItem("turnos", JSON.stringify(turnosGuardados));
+
+  Swal.fire({
+    icon: "success",
+    title: "¡Servicio agregado!",
+    text: "El servicio fue agregado correctamente.",
+    timer: 2000,
+    showConfirmButton: false,
+  });
 
   const turnoSeleccionado = { dia, hora };
 
   // Guardar el turno
   turnosReservados.push(turnoSeleccionado);
-
-  // Mostrar resumen con datos actuales
-  const cliente = { nombre, apellido, telefono };
-  mostrarResumenModal(cliente, serviciosElegidos, turnoSeleccionado);
-}
-
-function mostrarResumenModal(cliente, serviciosSeleccionados, turno) {
-  const resumenContainer = document.getElementById("contenido-resumen");
-
-  const serviciosHTML = serviciosSeleccionados
-    .map((serv) => `<li>${serv.nombre} ($${serv.precio})</li>`)
-    .join("");
-
-  const total = serviciosSeleccionados.reduce(
-    (acc, serv) => acc + serv.precio,
-    0
-  );
-
-  resumenContainer.innerHTML = `
-    <p><strong>Cliente:</strong> ${cliente.nombre} ${cliente.apellido}</p>
-    <p><strong>Teléfono:</strong> ${cliente.telefono}</p>
-    <p><strong>Servicios seleccionados:</strong></p>
-    <ul>${serviciosHTML}</ul>
-    <p><strong>Turno:</strong> ${turno.dia} a las ${turno.hora}</p>
-    <p><strong>Total a pagar:</strong> $${total}</p>
-  `;
-
-  const modal = new bootstrap.Modal(document.getElementById("resumenModal"));
-  modal.show();
+  actualizarHorarios();
 }
