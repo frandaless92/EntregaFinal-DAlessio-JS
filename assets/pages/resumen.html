@@ -30,7 +30,12 @@
         </nav>
       </div>
     </header>
-    <main></main>
+    <main class="container py-4">
+      <!-- Acá se carga todo el resumen del localStorage -->
+      <h2 class="mb-4">Resumen de Turnos</h2>
+      <div id="contenedor-resumen"></div>
+      <div id="total-resumen"></div>
+    </main>
     <footer class="bg-dark text-white pt-5">
       <div class="container">
         <div class="row">
@@ -42,12 +47,14 @@
             <p class="mb-1">
               <strong>Email:</strong> ylagaresyabrunails@gmail.com
             </p>
-            <p class="mb-1">
-              <strong>Teléfono / WhatsApp:</strong> +54 9 11 2233-4455
-            </p>
-            <a href="https://wa.me/5491122334455" target="_blank">
-              <img src="assets/icons/whatsapp.png" alt="WhatsApp" width="32" />
-            </a>
+            <div class="d-flex align-items-end">
+              <p class="mb-1 me-2">
+                <strong>Teléfono / WhatsApp:</strong> +54 9 11 2233-4455
+              </p>
+              <a href="https://wa.me/5491122334455" target="_blank">
+                <img src="../icons/whatsapp.png" alt="WhatsApp" width="32" />
+              </a>
+            </div>
           </div>
 
           <!-- Enlaces Rápidos -->
@@ -88,43 +95,8 @@
         </div>
       </div>
     </footer>
-    <div
-      class="modal fade"
-      id="resumenModal"
-      tabindex="-1"
-      aria-labelledby="resumenModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content shadow">
-          <div class="modal-header">
-            <h5 class="modal-title" id="resumenModalLabel">
-              Resumen de Reserva
-            </h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Cerrar"
-            ></button>
-          </div>
-          <div class="modal-body" id="contenido-resumen">
-            <!-- Aquí se carga el resumen -->
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Finalizar
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script src="../js/main.js"></script>
+    <script src="../js/resumen.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>

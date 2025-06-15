@@ -30,6 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
     .getElementById("formulario-turno")
     .addEventListener("submit", (e) => {
       e.preventDefault();
+      // Redirigir a la página resumen
+      window.location.href = "resumen.html";
     });
 
   document
