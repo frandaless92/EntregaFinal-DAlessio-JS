@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .getElementById("formulario-turno")
     .addEventListener("submit", (e) => {
       e.preventDefault();
-      // Redirigir a la página resumen
+      // Redirigir a la página resumen una vez que el cliente haya finalizado con la elección del servicio
       window.location.href = "resumen.html";
     });
 
@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+// Creamos las tarjetas de los servicios de manera dinámica desde el JS
 function renderServicios() {
   const contenedor = document.getElementById("lista-servicios");
 
@@ -121,6 +122,7 @@ function actualizarHorarios() {
   renderHorarios(horariosLibres);
 }
 
+// Funcion que toma los datos del formulario y los almacena en localStorage de manera dinámica
 function procesarReserva() {
   const nombre = document.getElementById("nombre").value.trim();
   const apellido = document.getElementById("apellido").value.trim();
@@ -160,6 +162,7 @@ function procesarReserva() {
   // Guardar de nuevo en localStorage
   localStorage.setItem("turnos", JSON.stringify(turnosGuardados));
 
+  // Utilizamos alertas personalizas de la libreria SweetAlert2
   Swal.fire({
     icon: "success",
     title: "¡Servicio agregado!",

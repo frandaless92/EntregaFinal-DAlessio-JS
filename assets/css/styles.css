@@ -46,11 +46,13 @@ header {
   gap: 10px;
   margin-bottom: 0;
 }
+
 .menu-principal.active {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+
 .menu-principal a {
   text-decoration: none;
   color: #9da715;
@@ -58,9 +60,12 @@ header {
   padding: 10px;
   border-radius: 5px;
 }
+
 .menu-principal a:hover {
   background: #46400f;
 }
+
+/* Estilos para el main del index */
 
 .title-principal {
   margin: 10px;
@@ -88,13 +93,12 @@ h2 {
 
 .card {
   transition: transform 0.3s ease;
-  /* Opcional: para que el aumento no desplace el resto del contenido */
   transform-origin: center center;
 }
 
 .card:hover {
-  transform: scale(1.05); /* Aumenta un 5% */
-  z-index: 10; /* Para que se superponga si hay elementos cercanos */
+  transform: scale(1.05);
+  z-index: 10;
 }
 
 .card-title {
@@ -104,6 +108,8 @@ h2 {
 .card-text {
   font-size: 0.95rem;
 }
+
+/* Estilos del footer */
 
 footer {
   background-color: #f5f3f3;
@@ -116,6 +122,8 @@ footer img {
 footer img:hover {
   transform: scale(1.1);
 }
+
+/* Aplico algunos estilos a la pagina de turnos, para corregir algo de bootstrap */
 
 #formulario-datos {
   max-width: 800px;
@@ -130,6 +138,7 @@ footer img:hover {
 }
 
 /* Versión para escritorio */
+
 @media (min-width: 768px) {
   .menu-principal {
     display: flex;

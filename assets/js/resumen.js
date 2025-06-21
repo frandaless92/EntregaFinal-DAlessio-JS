@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const totalContainer = document.getElementById("total-resumen");
   let turnos = JSON.parse(localStorage.getItem("turnos")) || [];
 
+  // Carga dinámica de las elecciones del usuario, y muestra del valor final.
   function renderTurnos() {
     contenedor.innerHTML = "";
     totalContainer.innerHTML = "";
@@ -13,11 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    let total = 0;
+    const total = turnos.reduce((acum, t) => acum + t.precio, 0);
 
     turnos.forEach((t, i) => {
-      total += t.precio;
-
       const card = document.createElement("div");
       card.className = "card mb-4 shadow-sm";
       card.innerHTML = `
@@ -76,6 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
       timer: 5000,
       showConfirmButton: false,
     });
+    // Luego de finalizada la reservada, limpiamos el localStorage y redirigimos automaticamente al index.
     setTimeout(() => {
       localStorage.setItem("turnos", JSON.stringify([]));
       window.location.href = "../../index.html";
