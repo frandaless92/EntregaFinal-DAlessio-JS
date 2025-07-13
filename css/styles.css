@@ -137,6 +137,10 @@ footer img:hover {
   margin: 10px;
 }
 
+.servicio-card {
+  background-color: #f3edca !important; /* Violeta claro o el color que prefieras */
+}
+
 /* Versión para escritorio */
 
 @media (min-width: 768px) {

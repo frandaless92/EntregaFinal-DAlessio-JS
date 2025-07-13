@@ -16,26 +16,28 @@
     <header>
       <!-- Encabezado con logo y menú -->
       <div class="logo">
-        <a href="../../index.html"
-          ><img src="../images/logo.png" alt="Logo de la empresa"
+        <a href="../index.html"
+          ><img src="../assets/images/logo.png" alt="Logo de la empresa"
         /></a>
       </div>
       <div class="menu-container">
         <nav class="menu-principal">
           <ul class="vinculos-style">
-            <li><a href="../../index.html">Inicio</a></li>
+            <li><a href="../index.html">Inicio</a></li>
             <li><a href="./turnos.html">Turnos</a></li>
+            <li><a href="./resumen.html">Resumen</a></li>
           </ul>
         </nav>
       </div>
     </header>
+<<<<<<< HEAD:assets/pages/turnos.html
     <main>
       <!-- Formulario para selección de servicios y turnos -->
+=======
+    <main class="container py-4">
+      <h2 class="mb-4">Reserva de Turnos</h2>
+>>>>>>> 0c3abae (Última entrega):pages/turnos.html
       <section id="form-turno">
-        <div class="row text-center">
-          <h2 class="h1 mt-3 mb-3">Reservá tu turno</h2>
-        </div>
-
         <form
           id="formulario-turno"
           class="p-4 border rounded shadow bg-light text-black m-4"
@@ -70,6 +72,10 @@
                 id="telefono"
               />
             </div>
+            <div class="mb-3">
+              <label class="form-label">E-Mail:</label>
+              <input type="email" class="form-control text-center" id="email" />
+            </div>
           </div>
           <div class="mb-4">
             <h3 class="h3 text-center">Servicios:</h3>
@@ -82,11 +88,15 @@
             </div>
             <div class="col-md-6">
               <label class="form-label">Día:</label>
-              <select class="form-select text-center" id="dia"></select>
+              <select class="form-select text-center" id="dia">
+                <option selected disabled value="">Cargando días...</option>
+              </select>
             </div>
             <div class="col-md-6">
               <label class="form-label">Horario:</label>
-              <select class="form-select text-center" id="hora"></select>
+              <select class="form-select text-center" id="hora">
+                <option selected disabled value="">Seleccione un día</option>
+              </select>
             </div>
           </div>
           <div class="row mb-3 mt-5">
@@ -122,7 +132,11 @@
                 <strong>Teléfono / WhatsApp:</strong> +54 9 11 2233-4455
               </p>
               <a href="https://wa.me/5491122334455" target="_blank">
-                <img src="../icons/whatsapp.png" alt="WhatsApp" width="32" />
+                <img
+                  src="../assets/icons/whatsapp.png"
+                  alt="WhatsApp"
+                  width="32"
+                />
               </a>
             </div>
           </div>
@@ -132,15 +146,18 @@
             <h5>Enlaces Rápidos</h5>
             <ul class="list-unstyled">
               <li>
-                <a href="index.html" class="text-black text-decoration-none"
+                <a href="../index.html" class="text-black text-decoration-none"
                   >Inicio</a
                 >
               </li>
               <li>
-                <a
-                  href="./assets/pages/turnos.html"
-                  class="text-black text-decoration-none"
+                <a href="./turnos.html" class="text-black text-decoration-none"
                   >Turnos</a
+                >
+              </li>
+              <li>
+                <a href="./resumen.html" class="text-black text-decoration-none"
+                  >Resumen</a
                 >
               </li>
             </ul>
@@ -150,10 +167,18 @@
           <div class="col-md-4 mb-4">
             <h5>Seguínos en Redes</h5>
             <a href="#" target="_blank" class="me-2">
-              <img src="../icons/instagram.png" alt="Instagram" width="32" />
+              <img
+                src="../assets/icons/instagram.png"
+                alt="Instagram"
+                width="32"
+              />
             </a>
             <a href="#" target="_blank">
-              <img src="../icons/facebook.png" alt="Facebook" width="32" />
+              <img
+                src="../assets/icons/facebook.png"
+                alt="Facebook"
+                width="32"
+              />
             </a>
           </div>
         </div>
@@ -166,8 +191,12 @@
       </div>
     </footer>
 
+<<<<<<< HEAD:assets/pages/turnos.html
     <script src="../js/main.js"></script>
     <!-- Incoporamos la librería de sweetalert2, con el fin de mostrar alertas más elaboradas. -->
+=======
+    <script src="../js/turnos.js"></script>
+>>>>>>> 0c3abae (Última entrega):pages/turnos.html
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>

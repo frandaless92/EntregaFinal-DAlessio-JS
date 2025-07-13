@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "nombre": "Depilación completa",
+    "precio": 15000,
+    "descripcion": "Depilación profesional en todas las zonas.",
+    "imagen": "./assets/images/depilacion.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Limpieza facial",
+    "precio": 10000,
+    "descripcion": "Piel renovada y luminosa con limpieza profunda.",
+    "imagen": "./assets/images/limpieza_facial.webp"
+  },
+  {
+    "id": 3,
+    "nombre": "Manicura semipermanente",
+    "precio": 10000,
+    "descripcion": "Esmaltado duradero y estilizado.",
+    "imagen": "./assets/images/manicura_semipermanente.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "Masajes descontracturantes",
+    "precio": 18000,
+    "descripcion": "Relajación profunda y bienestar físico.",
+    "imagen": "./assets/images/masajes.jpg"
+  },
+  {
+    "id": 5,
+    "nombre": "Uñas esculpidas",
+    "precio": 12000,
+    "descripcion": "Esculpido profesional con estilo único.",
+    "imagen": "./assets/images/unas.avif"
+  },
+  {
+    "id": 6,
+    "nombre": "Pedicura",
+    "precio": 12500,
+    "descripcion": "Cuidado estético y saludable de tus pies.",
+    "imagen": "./assets/images/pedicura.jpg"
+  },
+  {
+    "id": 7,
+    "nombre": "Extensiones de pestañas",
+    "precio": 15000,
+    "descripcion": "Mirada intensa y natural con extensiones personalizadas.",
+    "imagen": "./assets/images/pestanas.jpg"
+  },
+  {
+    "id": 8,
+    "nombre": "Peeling facial",
+    "precio": 11000,
+    "descripcion": "Rejuvenecimiento facial con eliminación de células muertas.",
+    "imagen": "./assets/images/peeling.jpg"
+  },
+  {
+    "id": 9,
+    "nombre": "Mascarilla de colágeno",
+    "precio": 9000,
+    "descripcion": "Hidratación profunda para una piel más firme.",
+    "imagen": "./assets/images/colageno.jpg"
+  },
+  {
+    "id": 10,
+    "nombre": "Perfilado de cejas",
+    "precio": 6000,
+    "descripcion": "Diseño ideal para tu tipo de rostro.",
+    "imagen": "./assets/images/cejas.jpg"
+  },
+  {
+    "id": 11,
+    "nombre": "Tinte de pestañas",
+    "precio": 7000,
+    "descripcion": "Color duradero para realzar tu mirada.",
+    "imagen": "./assets/images/tinte_pestanas.jpg"
+  },
+  {
+    "id": 12,
+    "nombre": "Tratamiento capilar hidratante",
+    "precio": 14000,
+    "descripcion": "Revitalizá tu cabello desde la raíz hasta las puntas.",
+    "imagen": "./assets/images/tratamiento_capilar.jpg"
+  },
+  {
+    "id": 13,
+    "nombre": "Radiofrecuencia facial",
+    "precio": 16000,
+    "descripcion": "Tonificación y rejuvenecimiento sin cirugía.",
+    "imagen": "./assets/images/radiofrecuencia.jpg"
+  },
+  {
+    "id": 14,
+    "nombre": "Masajes relajantes",
+    "precio": 17000,
+    "descripcion": "Liberá tensiones y recargá energías.",
+    "imagen": "./assets/images/masajes_relajantes.jpg"
+  },
+  {
+    "id": 15,
+    "nombre": "Diseño de cejas con henna",
+    "precio": 8000,
+    "descripcion": "Cejas definidas y naturales con henna orgánica.",
+    "imagen": "./assets/images/henna.jpg"
+  },
+  {
+    "id": 16,
+    "nombre": "Depilación con cera en piernas",
+    "precio": 9500,
+    "descripcion": "Piernas suaves por más tiempo.",
+    "imagen": "./assets/images/depilacion_piernas.jpg"
+  },
+  {
+    "id": 17,
+    "nombre": "Tratamiento antiacné",
+    "precio": 13000,
+    "descripcion": "Control efectivo de impurezas y granos.",
+    "imagen": "./assets/images/antiacne.jpg"
+  },
+  {
+    "id": 18,
+    "nombre": "Manicura tradicional",
+    "precio": 8500,
+    "descripcion": "Cuidado clásico de tus manos y uñas.",
+    "imagen": "./assets/images/manicura.jpg"
+  },
+  {
+    "id": 19,
+    "nombre": "Exfoliación corporal",
+    "precio": 15500,
+    "descripcion": "Renová tu piel eliminando impurezas.",
+    "imagen": "./assets/images/exfoliacion.jpg"
+  },
+  {
+    "id": 20,
+    "nombre": "Spa de pies",
+    "precio": 13500,
+    "descripcion": "Relajación y cuidado profundo para tus pies.",
+    "imagen": "./assets/images/spa_pies.png"
+  }
+]
